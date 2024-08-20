@@ -7,12 +7,35 @@ This SDK provides a simple interface for processing payments using various payme
 - **Multiple Payment Methods**: Supports payments via PayPal, Crypto, and Credit Cards.
 - **Facade Pattern**: Simplifies the integration by providing a common interface for all payment methods.
 - **Customizable**: Easily extendable to support additional payment methods.
+- **ABC**: Uses Abstraction
+- **Type hint**: Extra features for better static code analyze
+- **Tests**: Covered by tests
+- **PEP8**: compatible
 
 ## Installation
 
-To install the SDK, clone the repository and install the required dependencies:
+To install the SDK, clone the repository, doesn't require any pip libs:
 
 ```bash
-git clone https://github.com/yourusername/payment-sdk.git
-cd payment-sdk
-pip install -r requirements.txt
+git clone https://github.com/drppi44/PaymentSystemTestTask.git
+```
+
+
+## Usage
+```python
+from payment_sdk.payment_processor import PaymentProcessor
+from payment_sdk.payment_facades import PaypalFacade
+
+# Create an instance of the PaymentProcessor
+# with given payment system
+processor = PaymentProcessor(PaypalFacade)
+
+# Pay using PayPal
+processor.process_payment(
+    amount=100.0,
+    currency='USD',
+    recipient_email='recipient@example.com'
+)
+
+# Expected output: "Paypal payment success"
+```
