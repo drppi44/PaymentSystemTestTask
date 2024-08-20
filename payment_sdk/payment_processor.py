@@ -53,5 +53,5 @@ class PaymentProcessor:
         # noinspection PyBroadException
         try:
             self.payment_system.pay(**kwargs)
-        except Exception:
-            raise PaymentException()
+        except Exception as exc:
+            raise PaymentException() from exc
