@@ -1,6 +1,8 @@
 # Payment Processing SDK
 
-This SDK provides a simple interface for processing payments using various payment methods such as PayPal, Crypto, and Credit Cards. The SDK abstracts the complexity of integrating with different payment gateways and offers a unified API for handling payments.
+This SDK provides a simple interface for processing payments using various payment methods such as PayPal, Crypto, and
+Credit Cards. The SDK abstracts the complexity of integrating with different payment gateways and offers a unified API
+for handling payments.
 
 ## Features
 
@@ -20,8 +22,8 @@ To install the SDK, clone the repository, doesn't require any pip libs:
 git clone https://github.com/drppi44/PaymentSystemTestTask.git
 ```
 
-
 ## Usage
+
 ```python
 from payment_sdk.payment_processor import PaymentProcessor
 from payment_sdk.payment_facades import PaypalFacade
