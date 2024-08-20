@@ -1,17 +1,10 @@
-import random
-
-from payment_systems.exceptions import PaymentException
+from payment_systems.exceptions import ExceptionRaiser
 
 
-class CryptoPayment:
-    # noinspection PyMethodMayBeStatic
+class CryptoPayment(ExceptionRaiser):
+    # noinspection PyMethodMayBeStatic,PyUnusedLocal
     def process_transaction(self, **kwargs):
         self.throw_error()
         print('Crypto payment success')
 
         return 0
-
-    @staticmethod
-    def throw_error():
-        if random.random() < 0.2:  # 20% chance of failure
-            raise PaymentException()
