@@ -2,6 +2,7 @@ import random
 from typing import Type
 
 from payment_sdk.payment_facades import PaymentFacade
+from payment_systems.exceptions import PaymentException
 
 
 class PaymentProcessor:
@@ -11,13 +12,6 @@ class PaymentProcessor:
     def process_payment(self, **kwargs):
         # noinspection PyBroadException
         try:
-            self.throw_error()
-
             self.payment_system.pay(**kwargs)
-        except Exception:
+        except PaymentException:
             print('Payment processing failed')
-
-    @staticmethod
-    def throw_error():
-        if random.random() < 0.2:  # 20% chance of failure
-            raise Exception("Random payment processing error")
